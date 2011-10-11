@@ -1,0 +1,52 @@
+
+.menu {padding:0 0 0 32px; margin:0; list-style:none; height:40px; background:#fff url(menu-images/button1a.gif) repeat-x; position:relative; font-family:verdana, sans-serif; }
+.menu li.top {display:block; float:left; position:relative;}
+.menu li a.top_link {display:block; float:left; height:40px; line-height:33px; color:#bbb; text-decoration:none; font-size:11px; font-weight:bold; padding:0 0 0 12px; cursor:pointer;}
+.menu li a.top_link span {float:left; font-weight:bold; display:block; padding:0 24px 0 12px; height:40px;}
+.menu li a.top_link span.down {float:left; display:block; padding:0 24px 0 12px; height:40px; background:url(menu-images/down.gif) no-repeat right top;}
+.menu li a.top_link:hover {color:#000; background: url(menu-images/button4.gif) no-repeat;}
+.menu li a.top_link:hover span {background:url(menu-images/button4.gif) no-repeat right top;}
+.menu li a.top_link:hover span.down {background:url(menu-images/button4a.gif) no-repeat right top;}
+.menu li:hover > a.top_link {color:#000; background: url(menu-images/button4.gif) no-repeat;}
+.menu li:hover > a.top_link span {background:url(menu-images/button4.gif) no-repeat right top;}
+.menu li:hover > a.top_link span.down {background:url(menu-images/button4a.gif) no-repeat right top;}
+.menu table {border-collapse:collapse; width:0; height:0; position:absolute; top:0; left:0;}
+.menu a:hover {visibility:visible;}
+.menu li:hover {position:relative; z-index:200;}
+
+body {
+	background-color: #FFFFFF;
+	color: #000000;
+	font-family: Ubuntu, Verdana, Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 0 0 0 0;
+}
+p {
+	margin-left: 5px;
+}
+table {
+	margin-left: 5px;
+}
+h1 {
+	font-size: 16px;
+	margin-left: 5px;
+}
+h2 {
+	font-size: 14px;
+	background: #C0C0C0;
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 5px;
+}
+h3 {
+	font-size: 12px;
+	background: #EEEEEE;
+	margin-bottom: 0;
+	padding-left: 5px;
+}
+h4 {
+	font-size: 12px;
+	padding-left: 5px;
+	margin-bottom: 0;
+}
+

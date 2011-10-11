@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>Linux OS Stats</title>
+    <meta http-equiv="refresh" content="60">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+    <div>
+    <ul class="menu">
+        <li class="top"><a href="stats_linux.html" class="top_link"><span>Home</span></a></li>
+        <li class="top"><a href="stats_linux_60.html" class="top_link"><span>Last Hour</span></a></li>
+        <li class="top"><a href="stats_linux_240.html" class="top_link"><span>Last 4 Hours</span></a></li>
+        <li class="top"><a href="stats_linux_1440.html" class="top_link"><span>Last 24 Hours</span></a></li>
+    </ul>
+    </div>
+        
+    <h1>Linux OS Stats</h1> 
+    
+    <h2>Last 4 Hours (240 mins)</h2>
+    
+    <table>
+        <tr>
+            <td><h3>CPU (Utilization)</h3></td>
+            <td><h3>Memory (Used Physical)</h3></td>
+        </tr>
+        <tr>
+            <td><img src="cpu_percent.rrd_240.png"></td>
+            <td><img src="mem_used.rrd_240.png"></td>
+        </tr>
+    </table>
+    
+    <table>
+        <tr>
+            <td><h3>Network (Throughput bps In)</h3></td>
+            <td><h3>Network (Throughput bps Out)</h3></td>
+        </tr>
+        <tr>
+            <td><img src="net_bps_in.rrd_240.png"></td>
+            <td><img src="net_bps_out.rrd_240.png"></td>
+        </tr>
+    </table>
+    
+    <table>
+        <tr>
+            <td><h3>System Load Average (1 min)</h3></td>
+            <td><h3>Disk (Busy)</h3></td>
+        </tr>
+        <tr>
+            <td><img src="load_avg.rrd_240.png"></td>
+            <td><img src="disk_busy_percent.rrd_240.png"></td>
+        </tr>
+    </table>
+    
+</body>
+</html>
