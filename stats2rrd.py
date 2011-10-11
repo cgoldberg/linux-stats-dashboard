@@ -24,7 +24,7 @@ NET_INTERFACE = 'eth0'
 DISK = 'sda'
 INTERVAL = 60  # 1 min
 GRAPH_MINS = (60, 240, 1440)  # 1hour, 4hours, 1day
-GRAPH_DIR = './'
+GRAPH_DIR = './linux-stats-web/'
 STORAGE_DIR = './'
 
 
