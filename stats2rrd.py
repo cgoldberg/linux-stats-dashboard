@@ -2,25 +2,13 @@
 #
 #  Copyright (c) 2010-2011 Corey Goldberg (http://goldb.org)
 #
-#  License :: OSI Approved :: MIT License:
-#      http://www.opensource.org/licenses/mit-license
+#  License: MIT (http://www.opensource.org/licenses/mit-license)
 # 
-#      Permission is hereby granted, free of charge, to any person obtaining a copy
-#      of this software and associated documentation files (the "Software"), to deal
-#      in the Software without restriction, including without limitation the rights
-#      to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#      copies of the Software, and to permit persons to whom the Software is
-#      furnished to do so, subject to the following conditions:
-#
-#      The above copyright notice and this permission notice shall be included in
-#      all copies or substantial portions of the Software.multi
-#
-#  This file is part of linux-stats-dashboard
+#  This file is part of linux-stats-dashboard.
 #
 
 
 """stats2rrd.py - collect and graph linux operating system stats"""
-
 
 
 import os.path
@@ -43,17 +31,17 @@ STORAGE_DIR = './'
 
 def main():  
     cpu_pct = cpu_util(5)
-    
+
     mem_used, mem_total = mem_stats()
-    
+
     rx_bits, tx_bits = net_stats(NET_INTERFACE)
-    
+
     load_avg = load_avg_1min()
-    
+
     disk_pct = disk_busy(DISK, 5)
-    
+
     localhost_name = socket.gethostname()
-    
+
     # store values in rrd and update graphs
     rrd_ops('cpu_percent', cpu_pct, 'GAUGE', 'FF0000', localhost_name, 1000, upper_limit=100)
     rrd_ops('mem_used', mem_used, 'GAUGE', '00FF00', localhost_name, 1024, upper_limit=mem_total)
@@ -61,8 +49,8 @@ def main():
     rrd_ops('net_bps_out', tx_bits, 'DERIVE', '000099', localhost_name, 1000)
     rrd_ops('load_avg', load_avg, 'GAUGE', 'FF9933', localhost_name, 1000)
     rrd_ops('disk_busy_percent', disk_pct, 'GAUGE', '663366', localhost_name, 1000, upper_limit=100)
-    
-    
+
+
 def rrd_ops(stat, value, ds_type, color, title, base, upper_limit=None):
     rrd_name = '%s.rrd' % stat
     rrd = RRD(rrd_name, stat)
@@ -78,16 +66,16 @@ def rrd_ops(stat, value, ds_type, color, title, base, upper_limit=None):
     for mins in GRAPH_MINS:
         rrd.graph(mins)
     print time.strftime('%Y/%m/%d %H:%M:%S', time.localtime()), stat, value
-    
-    
+
+
 def net_stats(interface):
     for line in open('/proc/net/dev'):
         if interface in line:
             data = line.split('%s:' % interface)[1].split()
             rx_bits, tx_bits = (int(data[0]) * 8, int(data[8]) * 8)
             return (rx_bits, tx_bits)
-    
-    
+
+
 def mem_stats():
     with open('/proc/meminfo') as f:
         for line in f:
@@ -96,7 +84,7 @@ def mem_stats():
             if line.startswith('MemFree:'):
                 mem_used = mem_total - (int(line.split()[1]) * 1024)
     return mem_used, mem_total
-    
+
 
 def cpu_util(sample_duration=1):
     with open('/proc/stat') as f1:
@@ -136,8 +124,7 @@ def load_avg_1min():
     with open('/proc/loadavg') as f:
         line = f.readline()
     load_avg = float(line.split()[0])  # 1 minute load average
-    return load_avg
-    
+    return load_avg   
 
 
 
@@ -170,16 +157,16 @@ class RRD(object):
         cmd_output = p.communicate()[0].rstrip()
         if len(cmd_output) > 0:
             raise RRDError('unable to create RRD: %s' % cmd_output)
-        
-  
+
+
     def update(self, value):
         cmd_update = '%s update %s N:%s' % (self.rrd_exe, os.path.join(self.storage_dir, self.rrd_name), value)
         p = subprocess.Popen(shlex.split(cmd_update), stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=False)
         cmd_output = p.communicate()[0].rstrip()
         if len(cmd_output) > 0:
             raise RRDError('unable to update RRD: %s' % cmd_output)
-    
-    
+
+
     def graph(self, mins):       
         start_time = 'now-%s' % (mins * 60)  
         output_filename = '%s_%i.png' % (self.rrd_name, mins)
@@ -225,6 +212,6 @@ class RRD(object):
 class RRDError(Exception): pass
 
     
-    
+
 if __name__ == '__main__':
     main()
