@@ -23,16 +23,16 @@ Instructions
 
 * configure the script settings:
  
-  * *NET_INTERFACE*: network device namde
-  * *DISK*: storage device name
-  * *INTERVAL*: collection interval in secs (how often the script is run)
-  * *GRAPH_MINS*: timespans for graph/png files
-  * *GRAPH_DIR*: output directory for png images 
+  * **NET_INTERFACE**: network device namde
+  * **DISK**: storage device name
+  * **INTERVAL**: collection interval in secs (how often the script is run)
+  * **GRAPH_MINS**: timespans for graph/png files
+  * **GRAPH_DIR**: output directory for png images 
     
     * perhaps under '/var/www/'
     * make sure directory is writable
   
-  * *STORAGE_DIR*: output directory for rrd database files
+  * **STORAGE_DIR**: output directory for rrd database files
     
     * make sure directory is writable
     
@@ -50,12 +50,12 @@ Instructions
 Stats Collected
 ---------------
 
-* *cpu_percent*: processor utilization
-* *mem_used*: physical memory usage
-* *net_bps_in*: network throughput (bps in)
-* *net_bps_out*: network throughput (bps out)
-* *load_avg*: system load average (1 min)
-* *disk_busy_percent*: disk busy doing i/o
+* **cpu_percent**: processor utilization
+* **mem_used**: physical memory usage
+* **net_bps_in**: network throughput (bps in)
+* **net_bps_out**: network throughput (bps out)
+* **load_avg**: system load average (1 min)
+* **disk_busy_percent**: disk busy doing i/o
 
 ------------
 Dependencies
