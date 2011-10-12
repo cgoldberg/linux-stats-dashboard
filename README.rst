@@ -77,5 +77,5 @@ Screenshots
 -----------
 
 .. image:: ./linux-stats-dashboard/raw/master/screenshots/stats_linux_240.png
-.. image:: ./linux-stats-dashboard/raw/master/screenshots/net_bps_in_rrd_240.png
 .. image:: ./linux-stats-dashboard/raw/master/screenshots/stats_linux_index.png
+.. image:: ./linux-stats-dashboard/raw/master/screenshots/net_bps_in_rrd_240.png
