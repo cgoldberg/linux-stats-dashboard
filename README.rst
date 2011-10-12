@@ -71,3 +71,10 @@ License
 
 * This is Free Open Source Software.
 * OSI Approved :: `MIT License <http://www.opensource.org/licenses/mit-license>`_
+
+-----------
+Screenshots
+-----------
+
+.. image:: ./screenshots/net_bps_in_rrd_240.png
+
