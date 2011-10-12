@@ -76,5 +76,5 @@ License
 Screenshots
 -----------
 
-.. image:: ./screenshots/net_bps_in_rrd_240.png
+.. image:: ./raw/master/screenshots/net_bps_in_rrd_240.png
 
