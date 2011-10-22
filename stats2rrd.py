@@ -137,6 +137,7 @@ class RRD(object):
         self.base = 1000  # for traffic measurement, 1 kb/s is 1000 b/s.  for sizing, 1 kb is 1024 bytes. 
         self.graph_title = ''
         self.graph_dir = './' 
+        self.storage_dir = './' 
         self.graph_color = 'FF6666'
         self.graph_width = 480
         self.graph_height = 160
