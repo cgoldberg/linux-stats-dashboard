@@ -4,8 +4,8 @@ linux-stats-dashboard
 
 local system monitoring dashboard for linux
 
- * (c) 2010-2011 `Corey Goldberg <http://goldb.org>`_
- * https://github.com/cgoldberg/linux-stats-dashboard
+* © 2010-2011 `Corey Goldberg <http://goldb.org>`_
+* https://github.com/cgoldberg/linux-stats-dashboard
 
 ----
 Info
