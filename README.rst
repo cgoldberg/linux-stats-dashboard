@@ -4,7 +4,7 @@ linux-stats-dashboard
 
 local system monitoring dashboard for linux
 
-* © 2010-2011 `Corey Goldberg <http://goldb.org>`_
+* ï¿½ 2010-2011 `Corey Goldberg <http://goldb.org>`_
 * https://github.com/cgoldberg/linux-stats-dashboard
 
 ----
@@ -76,6 +76,6 @@ License
 Screenshots
 -----------
 
-.. image:: ./linux-stats-dashboard/raw/master/screenshots/stats_linux_240.png
-.. image:: ./linux-stats-dashboard/raw/master/screenshots/stats_linux_index.png
-.. image:: ./linux-stats-dashboard/raw/master/screenshots/net_bps_in_rrd_240.png
+.. image:: https://raw.github.com/cgoldberg/linux-stats-dashboard/master/screenshots/stats_linux_240.png
+.. image:: https://raw.github.com/cgoldberg/linux-stats-dashboard/master/screenshots/stats_linux_index.png
+.. image:: https://raw.github.com/cgoldberg/linux-stats-dashboard/master/screenshots/net_bps_in_rrd_240.png
