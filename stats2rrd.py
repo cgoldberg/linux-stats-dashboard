@@ -106,6 +106,8 @@ def disk_busy(device, sample_duration=1):
             time.sleep(sample_duration)
             content2 = f2.read()
     sep = '%s ' % device
+    io_ms1 = '0'
+    io_ms2 = '0'
     for line in content1.splitlines():
         if sep in line:
             io_ms1 = line.strip().split(sep)[1].split()[9]
